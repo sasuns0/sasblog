@@ -1,8 +1,7 @@
 const { Pool } = require('pg');
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: { rejectUnauthorized: false }
+  connectionString: process.env.POSTGRES_URL || 'postgresql://localhost/sasblog',
 });
 
 module.exports = pool;
