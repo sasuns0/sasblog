@@ -1,0 +1,15 @@
+{
+  "name": "sasblog",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "import": "node scripts/import.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "gray-matter": "^4.0.3",
+    "marked": "^9.1.6",
+    "pg": "^8.11.3"
+  }
+}

@@ -1,0 +1,45 @@
+body {
+  max-width: 680px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: Georgia, serif;
+  line-height: 1.6;
+  color: #222;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+header a {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+}
+
+ul.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+ul.post-list li {
+  margin: 0.6rem 0;
+}
+
+ul.post-list span {
+  color: #888;
+  font-size: 0.9rem;
+  font-family: monospace;
+  margin-right: 0.5rem;
+}
+
+article h1 {
+  margin-bottom: 0.25rem;
+}
+
+article time {
+  color: #888;
+  font-size: 0.9rem;
+  font-family: monospace;
+}
