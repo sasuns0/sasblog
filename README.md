@@ -8,13 +8,23 @@ A minimal blog built with Node.js, Express, and PostgreSQL.
 - **PostgreSQL** — post storage
 - **Markdown** — post format (via `marked` + `gray-matter`)
 - **Vanilla HTML/CSS/JS** — no frontend frameworks
+- **AWS EC2** — hosting
+- **Nginx** — reverse proxy
+- **PM2** — process manager
 
-## Setup
+## Local Setup
 
 ```bash
-npm install
+pnpm install
 createdb sasblog
 psql sasblog < schema.sql
+```
+
+Create a `.env` file in the project root:
+
+```
+POSTGRES_URL=postgresql://localhost/sasblog
+PORT=3000
 ```
 
 ## Writing Posts
@@ -38,7 +48,7 @@ Then import into the database:
 node scripts/import.js
 ```
 
-## Running
+## Running Locally
 
 ```bash
 node server.js
@@ -46,13 +56,14 @@ node server.js
 
 Open `http://localhost:3000`.
 
-## Deploy (Railway)
+## Deploy (AWS EC2)
 
-1. Push to GitHub
-2. New Project → Deploy from GitHub repo
-3. Add PostgreSQL plugin
-4. Run once via Railway shell:
-   ```bash
-   psql $DATABASE_URL < schema.sql
-   node scripts/import.js
-   ```
+Deployments are automated via GitHub Actions. Push to `main` to trigger a deployment.
+
+The workflow SSHes into the EC2 instance and runs:
+
+```bash
+git pull origin main
+pnpm install --frozen-lockfile
+pm2 restart sasblog
+```
