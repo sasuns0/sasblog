@@ -18,5 +18,5 @@ jobs:
           script: |
             cd ~/app/sasblog
             git pull origin main
-            pnpm install --frozen-lockfile
-            pm2 restart sasblog
+            /home/ubuntu/.nvm/versions/node/v24.14.1/bin/pnpm install --frozen-lockfile
+            /home/ubuntu/.nvm/versions/node/v24.14.1/bin/pm2 restart sasblog
