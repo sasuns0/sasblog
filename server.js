@@ -20,7 +20,7 @@ function layout(title, body) {
 </head>
 <body>
   <header>
-    <a href="/">sasblog</a>
+    <a href="/">works on my machine</a>
   </header>
   <main>
     ${body}
