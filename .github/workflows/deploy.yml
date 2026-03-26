@@ -16,7 +16,9 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
             cd ~/app/sasblog
             git pull origin main
-            /home/ubuntu/.nvm/versions/node/v24.14.1/bin/pnpm install --frozen-lockfile
-            /home/ubuntu/.nvm/versions/node/v24.14.1/bin/pm2 restart sasblog
+            pnpm install --frozen-lockfile
+            pm2 restart sasblog
