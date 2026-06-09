@@ -1,6 +1,6 @@
 # sasblog
 
-A minimal blog built with Node.js, Express, and PostgreSQL.
+A blog built with Node.js, Express, and PostgreSQL.
 
 ## Stack
 
